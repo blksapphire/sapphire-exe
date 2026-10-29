@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAPPHIRE.exe — a website that should not exist</title>
+    <meta
+      name="description"
+      content="The Sapphire builds small, useful, slightly cursed websites from Lagos — Upkeep, CleanSub, IdeaBlend, Seraph. This one is a fake operating system."
+    />
+    <meta name="theme-color" content="#05070f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAPPHIRE.exe" />
+    <meta property="og:title" content="SAPPHIRE.exe — a website that should not exist" />
+    <meta
+      property="og:description"
+      content="A fake operating system belonging to The Sapphire: local-first tools from Lagos, a terminal that talks back, and one button you should not click."
+    />
+    <meta property="og:image" content="/og-sapphire.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SAPPHIRE.exe boot screen with pixel lettering and a blue gem." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-sapphire.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        #os, #boot { display: none !important; }
+        #plain { display: block !important; }
+        body { overflow: auto; }
+      </style>
+    </noscript>
+
+    <a class="skip-link" href="#plain">Skip the operating system, read the plain version</a>
+
+    <div id="os" class="os" aria-hidden="true" inert>
+      <canvas class="sparkles" id="sparkles" aria-hidden="true"></canvas>
+
+      <div class="wallpaper" aria-hidden="true">
+        <div class="wall-stars"></div>
+        <p class="wall-mark">SAPPHIRE<span class="wall-mark-sub">OS&nbsp;1.0</span></p>
+        <p class="wall-tagline">a website that should not exist</p>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>★ LOCAL-FIRST TOOLS ★ BUILT IN LAGOS ★ INDEPENDENT ★ SHIPPED AT 2AM ★ NO ACCOUNTS ★ NO TRACKING ★</span>
+          <span>★ LOCAL-FIRST TOOLS ★ BUILT IN LAGOS ★ INDEPENDENT ★ SHIPPED AT 2AM ★ NO ACCOUNTS ★ NO TRACKING ★</span>
+        </div>
+      </div>
+
+      <div class="desktop-icons" role="toolbar" aria-label="Desktop icons">
+        <button type="button" class="desktop-icon" data-open="about">
+          <span class="icon-art icon-user" aria-hidden="true"></span>
+          <span>about_me</span>
+        </button>
+        <button type="button" class="desktop-icon" data-open="work">
+          <span class="icon-art icon-folder" aria-hidden="true"></span>
+          <span>work/</span>
+        </button>
+        <button type="button" class="desktop-icon" data-open="links">
+          <span class="icon-art icon-link" aria-hidden="true"></span>
+          <span>links</span>
+        </button>
+        <button type="button" class="desktop-icon" data-open="terminal">
+          <span class="icon-art icon-term" aria-hidden="true"></span>
+          <span>terminal</span>
+        </button>
+        <button type="button" class="desktop-icon" data-open="trash">
+          <span class="icon-art icon-trash" aria-hidden="true"></span>
+          <span>recycle_bin</span>
+        </button>
+        <button type="button" class="desktop-icon desktop-icon-danger" id="do-not-click">
+          <span class="icon-art icon-question" aria-hidden="true"></span>
+          <span>DO_NOT_CLICK</span>
+        </button>
+      </div>
+
+      <div class="window-layer" id="windows">
+        <section class="win win-about" data-win="about" role="dialog" aria-labelledby="about-title" tabindex="-1" hidden>
+          <header class="win-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h2 class="win-title" id="about-title">about_me.txt</h2>
+            <div class="win-buttons">
+              <button type="button" class="win-btn" data-win-min aria-label="Minimise about_me.txt"><span aria-hidden="true">_</span></button>
+              <button type="button" class="win-btn win-close" data-win-close aria-label="Close about_me.txt"><span aria-hidden="true">×</span></button>
+            </div>
+          </header>
+          <div class="win-body prose">
+            <p class="lede">Hi. I'm <strong>The Sapphire</strong> — a person from Lagos who makes small, useful, slightly cursed websites instead of sleeping.</p>
+            <p>
+              I build local-first tools: things that keep your data on your own device, work without an account, and ask nothing of you. Upkeep
+              watches your passports. CleanSub watches your subscriptions. RemoveMe figures out how to get your data off other people's servers.
+            </p>
+            <p>
+              The rest of the time I train trading agents, poke at custom Android ROMs, and start projects with names like "Seraph" because
+              apparently I have no shame.
+            </p>
+            <p class="fact-line"><span class="fact">LOCATION</span> Lagos, Nigeria · WAT</p>
+            <p class="fact-line"><span class="fact">STATUS</span> caffeinated, unsupervised</p>
+            <p class="fact-line"><span class="fact">REFERRAL</span> professional? never heard of her</p>
+            <p class="fact-line"><span class="fact">HOURS</span> whenever the idea is louder than the sleep</p>
+            <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>♫ now playing: the sound of a fan at 2am · now playing: the sound of a fan at 2am ·</span><span>♫ now playing: the sound of a fan at 2am · now playing: the sound of a fan at 2am ·</span></div></div>
+          </div>
+        </section>
+
+        <section class="win win-work" data-win="work" role="dialog" aria-labelledby="work-title" tabindex="-1" hidden>
+          <header class="win-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h2 class="win-title" id="work-title">work/</h2>
+            <div class="win-buttons">
+              <button type="button" class="win-btn" data-win-min aria-label="Minimise work folder"><span aria-hidden="true">_</span></button>
+              <button type="button" class="win-btn win-close" data-win-close aria-label="Close work folder"><span aria-hidden="true">×</span></button>
+            </div>
+          </header>
+          <div class="win-body">
+            <p class="win-help">Six of the things I've shipped. The rest are in the bin, where they belong.</p>
+            <ul class="work-list">
+              <li class="work-item">
+                <div class="work-head"><h3>Upkeep</h3><span class="tag">live</span></div>
+                <p>Expiry tracker for passports, policies and warranties. Local-first, no account, exports to your calendar.</p>
+                <p class="work-meta">JavaScript · <a href="https://upkeep-ecru-six.vercel.app" target="_blank" rel="noopener noreferrer">visit</a> · <a href="https://github.com/blksapphire/upkeep" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+              <li class="work-item">
+                <div class="work-head"><h3>IdeaBlend</h3><span class="tag">live</span></div>
+                <p>Where half-ideas meet and become slightly better half-ideas. Workspace, profiles, chat, reviews.</p>
+                <p class="work-meta">JavaScript · <a href="https://ideablend.vercel.app" target="_blank" rel="noopener noreferrer">visit</a> · <a href="https://github.com/blksapphire/ideablend" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+              <li class="work-item">
+                <div class="work-head"><h3>CleanSub</h3><span class="tag">live</span></div>
+                <p>Subscription and recurring-charge manager that keeps everything on your device.</p>
+                <p class="work-meta">JavaScript · <a href="https://cleansub-teal.vercel.app" target="_blank" rel="noopener noreferrer">visit</a> · <a href="https://github.com/blksapphire/cleansub" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+              <li class="work-item">
+                <div class="work-head"><h3>RemoveMe Helper</h3><span class="tag">live</span></div>
+                <p>A manual-first assistant for opting out of data brokers and getting your personal data removed.</p>
+                <p class="work-meta">JavaScript · <a href="https://removemehelper.vercel.app" target="_blank" rel="noopener noreferrer">visit</a> · <a href="https://github.com/blksapphire/removeme-helper" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+              <li class="work-item">
+                <div class="work-head"><h3>Seraph AI Trader</h3><span class="tag tag-warn">experimental</span></div>
+                <p>An autonomous trading agent with reasoning traces, so you can watch it make mistakes in detail.</p>
+                <p class="work-meta">Python · <a href="https://github.com/blksapphire/Seraph_AI_Trader" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+              <li class="work-item">
+                <div class="work-head"><h3>NFTScan</h3><span class="tag">tool</span></div>
+                <p>Scans and reports new NFT mints inside parameters you actually care about.</p>
+                <p class="work-meta">JavaScript · <a href="https://github.com/blksapphire/NFTScan" target="_blank" rel="noopener noreferrer">source</a></p>
+              </li>
+            </ul>
+            <p class="win-help">Also: a study tracker in Kotlin, a self-mapping app, and custom ROM builds for an Infinix X672. No, I don't have a favourite.</p>
+          </div>
+        </section>
+
+        <section class="win win-links" data-win="links" role="dialog" aria-labelledby="links-title" tabindex="-1" hidden>
+          <header class="win-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h2 class="win-title" id="links-title">links</h2>
+            <div class="win-buttons">
+              <button type="button" class="win-btn" data-win-min aria-label="Minimise links"><span aria-hidden="true">_</span></button>
+              <button type="button" class="win-btn win-close" data-win-close aria-label="Close links"><span aria-hidden="true">×</span></button>
+            </div>
+          </header>
+          <div class="win-body">
+            <p class="win-help">Pick a door. None of them are affiliate links; I'm not that organised.</p>
+            <div class="link-grid">
+              <a class="link-tile" href="https://github.com/blksapphire" target="_blank" rel="noopener noreferrer">
+                <span class="link-glyph" aria-hidden="true">&lt;/&gt;</span>
+                <span class="link-name">GitHub</span>
+                <span class="link-note">19 repos and counting</span>
+              </a>
+              <a class="link-tile" href="https://upkeep-ecru-six.vercel.app" target="_blank" rel="noopener noreferrer">
+                <span class="link-glyph" aria-hidden="true">◷</span>
+                <span class="link-name">Upkeep</span>
+                <span class="link-note">the newest thing</span>
+              </a>
+              <a class="link-tile" href="https://ideablend.vercel.app" target="_blank" rel="noopener noreferrer">
+                <span class="link-glyph" aria-hidden="true">✧</span>
+                <span class="link-name">IdeaBlend</span>
+                <span class="link-note">idea workshop</span>
+              </a>
+              <a class="link-tile" href="https://github.com/blksapphire" target="_blank" rel="noopener noreferrer">
+                <span class="link-glyph" aria-hidden="true">@</span>
+                <span class="link-name">Say hi</span>
+                <span class="link-note">open a GitHub issue, it works</span>
+              </a>
+            </div>
+            <p class="win-help small">No email here on purpose. The internet is a hallway; GitHub is the doorbell.</p>
+          </div>
+        </section>
+
+        <section class="win win-terminal" data-win="terminal" role="dialog" aria-labelledby="terminal-title" tabindex="-1" hidden>
+          <header class="win-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h2 class="win-title" id="terminal-title">terminal — /home/sapphire</h2>
+            <div class="win-buttons">
+              <button type="button" class="win-btn" data-win-min aria-label="Minimise terminal"><span aria-hidden="true">_</span></button>
+              <button type="button" class="win-btn win-close" data-win-close aria-label="Close terminal"><span aria-hidden="true">×</span></button>
+            </div>
+          </header>
+          <div class="win-body term" id="term-body">
+            <div class="term-out" id="term-out" role="log" aria-live="polite">
+              <p>SAPPHIRE SHELL 1.0 — type <span class="term-cmd">help</span> if you're lost.</p>
+            </div>
+            <form class="term-form" id="term-form" autocomplete="off">
+              <label class="visually-hidden" for="term-input">Terminal command</label>
+              <span class="term-prompt" aria-hidden="true">sapphire@lagos:~$</span>
+              <input id="term-input" class="term-input" name="cmd" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder="try: whoami" />
+            </form>
+          </div>
+        </section>
+
+        <section class="win win-trash win-small" data-win="trash" role="dialog" aria-labelledby="trash-title" tabindex="-1" hidden>
+          <header class="win-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h2 class="win-title" id="trash-title">recycle_bin</h2>
+            <div class="win-buttons">
+              <button type="button" class="win-btn" data-win-min aria-label="Minimise recycle bin"><span aria-hidden="true">_</span></button>
+              <button type="button" class="win-btn win-close" data-win-close aria-label="Close recycle bin"><span aria-hidden="true">×</span></button>
+            </div>
+          </header>
+          <div class="win-body prose">
+            <p>The bin contains one file: <code>deleted_confidence.txt</code>.</p>
+            <p>
+              It reads: <em>"I will ship this when it's perfect."</em> Filed under: things that never happened. The projects in <button type="button" class="inline-link" data-open="work">work/</button> exist precisely because this file is in the bin.
+            </p>
+            <p><button type="button" class="retro-button" id="restore-confidence">Restore file</button></p>
+            <p class="win-help" id="restore-result" role="status"></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="screensaver" id="screensaver" hidden aria-hidden="true">
+        <p class="screensaver-mark" id="screensaver-mark">SAPPHIRE.exe</p>
+        <p class="screensaver-hint">move something. anything.</p>
+      </div>
+
+      <div class="toast-stack" id="toasts" aria-live="polite"></div>
+
+      <div class="taskbar">
+        <button type="button" class="start-button" id="start-button" aria-label="Open launcher">
+          <span class="start-glyph" aria-hidden="true">▚</span> SAPPHIRE
+        </button>
+        <div class="task-windows" id="task-windows" aria-label="Open windows"></div>
+        <div class="task-status">
+          <button type="button" class="task-toggle" id="sound-toggle" aria-pressed="true" title="Toggle sound">
+            <span aria-hidden="true" id="sound-glyph">♫</span><span class="visually-hidden">Sound</span>
+          </button>
+          <span class="task-clock" id="clock" title="Local time in Lagos">--:--</span>
+          <button type="button" class="task-toggle" id="plain-toggle" title="Switch to plain text mode">
+            txt<span class="visually-hidden">Plain text mode</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="launcher" id="launcher" hidden>
+        <div class="launcher-panel">
+          <h2 class="launcher-title">SAPPHIRE menu</h2>
+          <button type="button" class="launcher-item" data-open="about">about_me.txt</button>
+          <button type="button" class="launcher-item" data-open="work">work/</button>
+          <button type="button" class="launcher-item" data-open="links">links</button>
+          <button type="button" class="launcher-item" data-open="terminal">terminal</button>
+          <button type="button" class="launcher-item" data-open="trash">recycle_bin</button>
+          <button type="button" class="launcher-item" id="launcher-plain">plain text mode</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="boot" id="boot">
+      <div class="boot-inner">
+        <p class="boot-small">SAPPHIRE BIOS v1.0 · LAGOS</p>
+        <h1 class="boot-logo" aria-label="SAPPHIRE.exe">SAPPHIRE<span>.exe</span></h1>
+        <p class="boot-tagline">a website that should not exist</p>
+        <p class="boot-copy">You are about to enter a fake operating system belonging to The Sapphire. It has opinions, sounds, and one button you should not click.</p>
+        <div class="boot-actions">
+          <button type="button" class="boot-go" id="boot-go">▶ boot</button>
+          <button type="button" class="boot-sound" id="boot-sound" aria-pressed="true">sound: on</button>
+        </div>
+        <p class="boot-hint">click to boot · escape at any time · best with sound</p>
+        <div class="boot-log" id="boot-log" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <main id="plain" class="plain" tabindex="-1">
+      <header class="plain-head">
+        <h1>The Sapphire</h1>
+        <p>Local-first maker in Lagos, Nigeria. I build small tools that keep your data on your device.</p>
+        <button type="button" class="retro-button" id="plain-back">← back to SAPPHIRE.exe</button>
+      </header>
+      <section aria-labelledby="plain-about">
+        <h2 id="plain-about">About</h2>
+        <p>
+          I'm The Sapphire. I make websites and tools that are useful first and strange second. Most of them run entirely in your browser: no
+          account, no server, no tracking. Upkeep tracks expiry dates, CleanSub tracks subscriptions, RemoveMe Helper walks you through data-broker
+          opt-outs.
+        </p>
+        <p>Other things: autonomous trading agents (Seraph), custom Android ROM builds, and whatever the 2am idea was.</p>
+      </section>
+      <section aria-labelledby="plain-work">
+        <h2 id="plain-work">Work</h2>
+        <ul>
+          <li><a href="https://upkeep-ecru-six.vercel.app" rel="noopener noreferrer">Upkeep</a> — expiry and renewal tracker (<a href="https://github.com/blksapphire/upkeep" rel="noopener noreferrer">source</a>)</li>
+          <li><a href="https://ideablend.vercel.app" rel="noopener noreferrer">IdeaBlend</a> — idea workspace (<a href="https://github.com/blksapphire/ideablend" rel="noopener noreferrer">source</a>)</li>
+          <li><a href="https://cleansub-teal.vercel.app" rel="noopener noreferrer">CleanSub</a> — subscription tracker (<a href="https://github.com/blksapphire/cleansub" rel="noopener noreferrer">source</a>)</li>
+          <li><a href="https://removemehelper.vercel.app" rel="noopener noreferrer">RemoveMe Helper</a> — data-broker opt-out assistant (<a href="https://github.com/blksapphire/removeme-helper" rel="noopener noreferrer">source</a>)</li>
+          <li><a href="https://github.com/blksapphire/Seraph_AI_Trader" rel="noopener noreferrer">Seraph AI Trader</a> — autonomous trading agent</li>
+          <li><a href="https://github.com/blksapphire/NFTScan" rel="noopener noreferrer">NFTScan</a> — NFT mint scanner</li>
+        </ul>
+      </section>
+      <section aria-labelledby="plain-links">
+        <h2 id="plain-links">Links</h2>
+        <p>
+          <a href="https://github.com/blksapphire" rel="noopener noreferrer">GitHub</a> — the best way to reach me. <a href="https://github.com/blksapphire" rel="noopener noreferrer">Say hi</a>.
+        </p>
+      </section>
+      <footer class="plain-foot">
+        <p>SAPPHIRE.exe is a static page: no cookies, no analytics, no network calls. Sounds are synthesised in your browser. Built in Lagos.</p>
+      </footer>
+    </main>
+  </body>
+</html>
