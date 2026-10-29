@@ -2,7 +2,7 @@
 
 A fake operating system that tells you who The Sapphire is. Boot it, drag the windows around, poke the terminal, and try not to click the red icon.
 
-Live: **https://blksapphire.vercel.app** (once deployed)
+Live: **https://blksapphire.vercel.app**
 
 ## What's inside
 

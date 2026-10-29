@@ -146,6 +146,6 @@ test('page metadata is present', () => {
   assert.match(html, /<title>SAPPHIRE\.exe — a website that should not exist<\/title>/);
   assert.match(html, /<meta\s+name="description"\s+content="[^"]{80,}"/);
   assert.match(html, /<meta name="viewport" content="width=device-width, initial-scale=1"/);
-  assert.match(html, /<meta property="og:image" content="\/og-sapphire\.png"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/blksapphire\.vercel\.app\/og-sapphire\.png"/);
   assert.match(html, /<link rel="icon" type="image\/svg\+xml" href="\/favicon\.svg"/);
 });
