@@ -496,8 +496,8 @@ const commands = {
     ].forEach((line) => printTerm(line));
   },
   whoami() {
-    printTerm('The Sapphire — local-first maker. Lagos, Nigeria.');
-    printTerm('Ships small, useful, slightly cursed things before losing nerve.');
+    printTerm('The Sapphire — product engineer. Lagos, Nigeria.');
+    printTerm('Designs, builds and ships web products end to end. Open to contract work.');
   },
   ls() {
     printTerm('about_me.txt   work/   links   terminal   recycle_bin/   DO_NOT_CLICK');
@@ -527,8 +527,8 @@ const commands = {
       printTerm('usage: cat bio', 'term-err');
       return;
     }
-    printTerm('I make small, local-first websites from Lagos. No accounts, no tracking,');
-    printTerm('no backend — just things that work better than they probably should.');
+    printTerm('I build web products end to end — interface, logic, deploy. Available for');
+    printTerm('contract work. Biggest build: IdeaBlend. Smaller tools are local-first by design.');
   },
   date() {
     const now = new Date();
@@ -618,7 +618,7 @@ const particlesCanvas = $('#sparkles');
 const pctx = particlesCanvas.getContext('2d');
 let particles = [];
 let rafId = null;
-const GEM_COLORS = ['#8fb0ff', '#4f7cff', '#c3d4ff', '#6ee7b7', '#ffcc66'];
+const GEM_COLORS = ['#a6c0d8', '#6d8fb3', '#e0e8f0', '#93a78e', '#d4ad66'];
 
 function sizeCanvas() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);

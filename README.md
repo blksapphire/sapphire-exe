@@ -1,6 +1,6 @@
 # SAPPHIRE.exe
 
-A fake operating system that tells you who The Sapphire is. Boot it, drag the windows around, poke the terminal, and try not to click the red icon.
+Personal site for The Sapphire — a product engineer in Lagos, open for contract work. It pretends to be an operating system: boot it, drag the windows around, poke the terminal, and try not to click the red icon.
 
 Live: **https://blksapphire.vercel.app**
 
@@ -25,7 +25,7 @@ Live: **https://blksapphire.vercel.app**
 
 ```
 index.html          markup, copy, plain-text fallback
-styles.css          pixel/CRT theme, responsive layout
+styles.css          pixel/CRT dark-academia theme, responsive layout
 app.js              boot, window manager, terminal, audio, easter eggs
 fonts/              Press Start 2P + VT323 (OFL, licences included)
 favicon.svg
