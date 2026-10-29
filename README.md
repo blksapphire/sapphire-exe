@@ -44,5 +44,5 @@ Then open <http://localhost:4173>. There is no build step and no dependencies.
 ## Test
 
 ```sh
-npm test        # or: node --test test/
+npm test        # or: node --test test/structure.test.js
 ```

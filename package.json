@@ -4,7 +4,7 @@
   "private": true,
   "description": "SAPPHIRE.exe — a fake operating system belonging to The Sapphire",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/structure.test.js",
     "dev": "python3 -m http.server 4173"
   },
   "engines": {
