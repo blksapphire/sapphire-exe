@@ -491,6 +491,7 @@ const commands = {
       '  sudo          do not',
       '  hack          also do not',
       '  coffee        yes',
+      '  contact       how to reach me',
       '  clear         wipe the screen',
       '  exit          leave gracefully'
     ].forEach((line) => printTerm(line));
@@ -501,6 +502,11 @@ const commands = {
   },
   ls() {
     printTerm('about_me.txt   work/   links   terminal   recycle_bin/   DO_NOT_CLICK');
+  },
+  contact() {
+    printTerm('email     mayowaa416@gmail.com');
+    printTerm('whatsapp  links window → WhatsApp (number not printed)');
+    printTerm('x         @mayowaa416');
   },
   open(arg) {
     const target = (arg || '').toLowerCase().replace(/\/$/, '');

@@ -14,6 +14,8 @@ const vercel = JSON.parse(read('vercel.json'));
 
 const ALLOWED_HOSTS = [
   'github.com',
+  'x.com',
+  'wa.me',
   'upkeep-ecru-six.vercel.app',
   'ideablend.vercel.app',
   'cleansub-teal.vercel.app',
@@ -131,6 +133,15 @@ test('plain-text fallback carries the real content', () => {
     assert.ok(plain.includes(name), `plain version is missing ${name}`);
   }
   assert.match(plain, /github\.com\/blksapphire/);
+  assert.match(plain, /mayowaa416@gmail\.com/);
+  assert.match(plain, /x\.com\/mayowaa416/);
+});
+
+test('whatsapp number only appears inside chat links', () => {
+  const hits = (html.match(/9033096864/g) || []).length;
+  const chatLinks = (html.match(/https:\/\/wa\.me\/2349033096864/g) || []).length;
+  assert.ok(chatLinks > 0, 'expected WhatsApp chat links');
+  assert.equal(hits, chatLinks, 'the number must not be printed outside wa.me URLs');
 });
 
 test('security headers are configured', () => {

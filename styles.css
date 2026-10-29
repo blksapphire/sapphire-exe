@@ -491,6 +491,11 @@ body.plain-mode .os {
   min-width: 74px;
 }
 
+.fact-hint {
+  font-size: 15px;
+  color: var(--faint);
+}
+
 .win-help {
   color: var(--muted);
   font-size: 18px;
