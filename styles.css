@@ -285,6 +285,10 @@ body.plain-mode .os {
   color: var(--rose);
 }
 
+.desktop-icon-pay {
+  color: var(--amber);
+}
+
 .icon-art {
   width: 46px;
   height: 46px;
@@ -317,6 +321,10 @@ body.plain-mode .os {
 
 .icon-question {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='6' y='2' width='4' height='1' fill='%23c47f7f'/%3E%3Crect x='5' y='3' width='1' height='2' fill='%23c47f7f'/%3E%3Crect x='10' y='3' width='1' height='2' fill='%23c47f7f'/%3E%3Crect x='9' y='5' width='2' height='2' fill='%23c47f7f'/%3E%3Crect x='7' y='7' width='2' height='3' fill='%23c47f7f'/%3E%3Crect x='7' y='12' width='2' height='2' fill='%23c47f7f'/%3E%3C/svg%3E");
+}
+
+.icon-pay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='2' y='4' width='12' height='8' fill='%23d4ad66'/%3E%3Crect x='3' y='5' width='10' height='6' fill='%231e1a14'/%3E%3Crect x='6' y='6' width='4' height='1' fill='%23d4ad66'/%3E%3Crect x='5' y='7' width='1' height='2' fill='%23d4ad66'/%3E%3Crect x='10' y='7' width='1' height='2' fill='%23d4ad66'/%3E%3Crect x='6' y='9' width='4' height='1' fill='%23d4ad66'/%3E%3Crect x='7' y='7' width='2' height='2' fill='%23e0e8f0'/%3E%3C/svg%3E");
 }
 
 /* ---------- windows ---------- */
@@ -632,6 +640,110 @@ body.plain-mode .os {
 .link-note {
   font-size: 16px;
   color: var(--faint);
+}
+
+/* open to work + payments */
+
+.hire-banner {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(212, 173, 102, 0.16), rgba(212, 173, 102, 0.04)), var(--bg-2);
+  border: 2px solid var(--amber);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hire-banner p {
+  margin: 0;
+}
+
+.hire-banner .hire-kicker {
+  font-family: var(--pixel);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+}
+
+.hire-banner .hire-line {
+  margin-top: 8px;
+  font-size: 21px;
+  color: var(--text);
+}
+
+.hire-banner .hire-cta {
+  margin-top: 8px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.pay-card {
+  margin: 14px 0;
+  padding: 12px 14px;
+  background: var(--bg-2);
+  border: 2px solid var(--line);
+}
+
+.pay-card + .pay-card {
+  margin-top: 10px;
+}
+
+.pay-card .pay-label {
+  margin: 0;
+  font-family: var(--pixel);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+}
+
+.pay-card .pay-bank {
+  margin: 8px 0 0;
+  font-size: 20px;
+  color: var(--gem-pale);
+}
+
+.pay-card .pay-value {
+  margin: 2px 0 6px;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.pay-card .win-help {
+  margin: 0;
+}
+
+.pay-addresses {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.pay-addresses li {
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px dashed var(--line);
+}
+
+.pay-addresses li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.pay-net {
+  font-family: var(--pixel);
+  font-size: 6px;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+}
+
+.pay-address {
+  font-family: var(--term);
+  font-size: 17px;
+  color: var(--gem-pale);
+  word-break: break-all;
+  user-select: all;
 }
 
 .inline-link {
@@ -1207,6 +1319,11 @@ body.plain-mode .plain {
 
   .link-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pay-addresses li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
   }
 
   .term {

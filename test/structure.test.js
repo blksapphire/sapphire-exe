@@ -144,6 +144,36 @@ test('whatsapp number only appears inside chat links', () => {
   assert.equal(hits, chatLinks, 'the number must not be printed outside wa.me URLs');
 });
 
+test('payment details stay inside the pay window', () => {
+  const plain = html.slice(html.indexOf('<main id="plain"'));
+  const payStart = html.indexOf('data-win="pay"');
+  const payEnd = html.indexOf('data-win="terminal"');
+  const pay = html.slice(payStart, payEnd);
+  assert.ok(payStart > 0 && payEnd > payStart, 'pay window not found');
+  assert.match(pay, /Access Bank/);
+  assert.match(pay, /1505922246/);
+  assert.doesNotMatch(plain, /1505922246/, 'bank number must not be in the plain fallback');
+});
+
+test('crypto addresses are well-formed and stay inside the pay window', () => {
+  const plain = html.slice(html.indexOf('<main id="plain"'));
+  const pay = html.slice(html.indexOf('data-win="pay"'), html.indexOf('data-win="terminal"'));
+  const addresses = [
+    /^0x[0-9a-fA-F]{40}$/,
+    /^[1-9A-HJ-NP-Za-km-z]{43,44}$/,
+    /^T[1-9A-HJ-NP-Za-km-z]{33}$/,
+    /^bc1q[0-9a-z]{38,42}$/
+  ];
+  const listed = [...pay.matchAll(/<code class="pay-address">([^<]+)<\/code>/g)].map((match) => match[1]);
+  assert.equal(listed.length, addresses.length, 'expected four crypto addresses');
+  listed.forEach((address, index) => {
+    assert.match(address, addresses[index], `${address} is not a valid address`);
+    assert.ok(!plain.includes(address), `${address} must not be in the plain fallback`);
+  });
+  const evm = listed.filter((address) => address.startsWith('0x'));
+  assert.equal(new Set(evm).size, 1, 'ETH and BNB should share one EVM address');
+});
+
 test('security headers are configured', () => {
   const headers = vercel.headers[0].headers;
   const map = Object.fromEntries(headers.map((header) => [header.key, header.value]));

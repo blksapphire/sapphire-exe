@@ -7,8 +7,8 @@ Live: **https://blksapphire.vercel.app**
 ## What's inside
 
 - Boot screen with a typed POST log and a synthesised chime
-- Draggable, focusable windows: `about_me.txt`, `work/`, `links`, `terminal`, `recycle_bin`
-- A terminal that answers `help`, `whoami`, `ls`, `open`, `cat bio`, `date`, `sudo`, `hack`, `coffee`, `clear`, `exit`
+- Draggable, focusable windows: `about_me.txt`, `work/`, `links`, `pay_me.txt`, `terminal`, `recycle_bin`
+- A terminal that answers `help`, `whoami`, `ls`, `open`, `cat bio`, `contact`, `pay`, `date`, `sudo`, `hack`, `coffee`, `clear`, `exit`
 - Taskbar with Lagos time, sound toggle and a plain-text-mode switch
 - Easter eggs: a button you should not click, a Konami code, sparkles, an idle screensaver
 - Mobile layout: windows become full-screen sheets, icons move into a launcher
@@ -19,6 +19,8 @@ Live: **https://blksapphire.vercel.app**
 - No account, no backend, no analytics, no cookies, no network calls
 - All sound is synthesised with WebAudio; fonts are self-hosted
 - The only stored value is `sapphire.audio` (on/off) in `localStorage`
+- WhatsApp links use `wa.me`; the number is never printed as text
+- Bank and crypto details appear only inside `pay_me.txt`, never in the plain fallback or metadata
 - CSP and security headers in `vercel.json`
 
 ## Structure

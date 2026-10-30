@@ -109,7 +109,7 @@ function revealOs() {
     boot.hidden = true;
   }, 300);
   $('#start-button').focus({ preventScroll: true });
-  window.setTimeout(() => toast('Welcome', 'You have 6 icons and no instructions. Try not to click the red one.'), 900);
+  window.setTimeout(() => toast('Welcome', 'You have 7 icons and no instructions. Try not to click the red one.'), 900);
   resetIdle();
 }
 
@@ -191,6 +191,7 @@ const labels = {
   about: 'about_me.txt',
   work: 'work/',
   links: 'links',
+  pay: 'pay_me.txt',
   terminal: 'terminal',
   trash: 'recycle_bin'
 };
@@ -356,6 +357,10 @@ $$('[data-open]').forEach((button) => {
   button.addEventListener('click', () => openWindow(button.dataset.open));
 });
 
+$$('.win [data-open]').forEach((button) =>
+  button.addEventListener('click', () => openWindow(button.dataset.open))
+);
+
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     if (document.body.classList.contains('party')) {
@@ -485,28 +490,34 @@ const commands = {
       'available commands:',
       '  whoami        who is this',
       '  ls            list things',
-      '  open <x>      about | work | links | trash',
+      '  open <x>      about | work | links | pay | trash',
       '  cat bio       the short version',
       '  date          Lagos time',
       '  sudo          do not',
       '  hack          also do not',
       '  coffee        yes',
       '  contact       how to reach me',
+      '  pay           bank transfer or crypto',
       '  clear         wipe the screen',
       '  exit          leave gracefully'
     ].forEach((line) => printTerm(line));
   },
   whoami() {
     printTerm('The Sapphire — product engineer. Lagos, Nigeria.');
-    printTerm('Designs, builds and ships web products end to end. Open to contract work.');
+    printTerm('Open to full-time roles, freelance gigs and contract work. Yes, paid.');
   },
   ls() {
-    printTerm('about_me.txt   work/   links   terminal   recycle_bin/   DO_NOT_CLICK');
+    printTerm('about_me.txt   work/   links   pay_me.txt   terminal   recycle_bin/   DO_NOT_CLICK');
   },
   contact() {
     printTerm('email     mayowaa416@gmail.com');
     printTerm('whatsapp  links window → WhatsApp (number not printed)');
     printTerm('x         @mayowaa416');
+    printTerm('payments  pay_me.txt → bank transfer or crypto');
+  },
+  pay() {
+    printTerm('opening pay_me.txt — bank transfer or crypto ...');
+    openWindow('pay');
   },
   open(arg) {
     const target = (arg || '').toLowerCase().replace(/\/$/, '');
@@ -516,6 +527,9 @@ const commands = {
       'about_me': 'about',
       work: 'work',
       links: 'links',
+      pay: 'pay',
+      pay_me: 'pay',
+      'pay_me.txt': 'pay',
       trash: 'trash',
       bin: 'trash',
       recycle_bin: 'trash'
@@ -534,7 +548,7 @@ const commands = {
       return;
     }
     printTerm('I build web products end to end — interface, logic, deploy. Available for');
-    printTerm('contract work. Biggest build: IdeaBlend. Smaller tools are local-first by design.');
+    printTerm('full-time roles, gigs and contract work. Biggest build: IdeaBlend.');
   },
   date() {
     const now = new Date();
